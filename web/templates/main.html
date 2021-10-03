@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>괴도키즈-메인</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static',filename='assets/css/noscript.css')}}" /></noscript>
+
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="/" class="title">괴도키즈</a>
+				<nav>
+					<ul>
+						<li><a href="/" class="active">Logout</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			 <div id="wrapper" style="background-color: white;"> 
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<span><a href="video"><img src="{{url_for('static',filename='assets/images/videolist.png')}}" style="width: 30%; height: 30%; margin-left: 10%;" alt="폭력의심 영상검토"></a></span>
+							<span><a href="list"><img src="{{url_for('static',filename='assets/images/reportlist.png')}}" style="width: 30%; height: 30%; margin-left: 15%;" alt="자동신고 기록확인"></a></span>
+						</div>
+					</section> 
+			</div> 
+
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy;괴도키즈 </li><li>Developer: 김규민,김규원,김석기,김호준,이은서  Design: 김석기, 김호준</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+		<script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/jquery.scrollex.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/jquery.scrolly.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/browser.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/breakpoints.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/util.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,105 @@
+{% with messages = get_flashed_messages() %} 
+	{% if messages %} 
+		<script> 
+			alert("{{messages[-1]}}") 
+		</script> 
+	{% endif %}
+{% endwith %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>괴도키즈</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static',filename='assets/css/noscript.css')}}" /></noscript>
+
+		
+
+	</head>
+	<body class="is-preload">
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<div style="float: left;">
+								<img src="{{url_for('static',filename='assets/images/logo.png')}}" alt="괴도키즈 로고 이미지" style="width:auto; height: auto; max-width: 400px; max-height: 400px;" >
+							</div>
+							<p>실시간 아동학대방지 프로그램<br>Real-Time Child Abuse Detection Program<br>(protecting and prevneting children from violence in real time)</p>
+							<div class="split style1">
+								<section>
+									<form method="POST" action="/main" >
+										<!-- 액션 : 실행할 페이지(=링크) 메소드 : 딜리트/포스트/겟 등의 통신방법 버튼을 서브밋으로 설정하면 해당 폼 설정으로 실행됨 그럼 이만 -->
+										<div class="fields">
+											<div class="field half">
+												<label for="name">E-mail</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field half">
+												<label for="name">Password</label>
+												<input type="password" name="password" id="password" />
+											</div>
+											<div style="margin-top: 10px;">
+												<a href="register" style="margin-left: 30px;">회원가입</a> &nbsp;&nbsp;
+											</div>
+										</div>
+										<ul>
+											<ui><button type="submit">Enter</button></ui>
+											<!-- <ui><a href="main"><button>Submit</button></a></ui> -->
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>서울특별시 성북구 안암로 145<br />
+											02-3290-1114<br />
+											</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">savekids@good.com</a>
+										</li>
+										<li>
+											<h3>Tel</h3>
+											<span>02-3290-1114</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy;괴도키즈 </li><li>Developer: 김규민,김규원,김석기,김호준,이은서  Design: 김석기, 김호준</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets/js/jquery.scrollex.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets/js/jquery.scrolly.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+
+	</body>
+</html>

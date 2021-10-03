@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head>
+    <title>괴도키즈</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static',filename='assets/css/noscript.css')}}" /></noscript>
+    
+
+    <style>
+        table {width: 100%; }
+    </style>
+</head>
+<body class="">
+
+    <!-- Header -->
+        <header id="header">
+            <a href="main" class="title">괴도키즈</a>
+            <nav>
+                <ul>
+                    <!-- <li><a href="main.html">Home</a></li> -->
+                    <!-- <li><a href="generic.html">Generic</a></li> -->
+                    <li><a href="index" class="active">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+                <section id="main" class="wrapper">
+                    <div class="inner">
+                        <h1 class="major">Report List</h1>
+                            <section>
+                                <div class="table-wrapper" style="width: 100%;">
+                                    <div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+													<th>No.</th>
+													<th>어린이집</th>
+													<th>신고시간</th>
+                                                    <th>발생시간</th>
+													<th>신고된 관할서</th>
+													<th>접수현황</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="order-by-time">
+                                                {% for row in time_sorted_data %}
+                                                <tr onclick="document.getElementById('video').src = '{{ row.video_path }}';document.getElementById('pre-info').innerHTML = '<code>{{row.video_info}}</code>'">
+                                                    <td>{{ row.index }}</a></td>
+                                                    <td>{{ row.daycare }}</td>
+                                                    <td>{{ row.report_time }}</td>
+                                                    <td>{{ row.action_time }}</td>
+                                                    <td>{{ row.police_station }}</td>
+                                                    <td>{{ row.police_status }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="4"></td>
+                                                    <td>Total: {{data_length}}</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                
+                                    <div style="display: inline-block; width: 50%;">
+                                        <iframe id="video" width="600" height="500" src="{{ url_for('static', filename='assets/images/player.png')}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="col-4 col-12-small" style="display: inline-block;vertical-align: top;">
+                                        <pre style="width: 500px; height: 300px; " id='pre-info'>
+                                        <code><br><br>Information:<br>{{video_info}}<br><br></code>
+                                        </pre>
+                                    </div>
+                                </div>
+                                
+                            </section>
+
+                    </div>
+                </section>
+        </div>
+
+    <!-- Footer -->
+        <footer id="footer" class="wrapper alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>©괴도키즈 </li><li>Developer: 김규민,김규원,김석기,김호준,이은서  Design: 김석기, 김호준</li>
+                </ul>
+            </div>
+        </footer>
+
+    <!-- Scripts -->
+    <script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/jquery.scrollex.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/jquery.scrolly.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/browser.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/breakpoints.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/util.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>

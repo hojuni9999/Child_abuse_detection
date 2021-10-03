@@ -1,0 +1,132 @@
+<!DOCTYPE html><html><head>
+    <title>괴도키즈</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static',filename='assets/css/noscript.css')}}" /></noscript>
+    
+
+    <style>
+        table {width: 100%; }
+    </style>
+</head>
+<body class="">
+
+    <!-- Header -->
+        <header id="header">
+            <a href="main" class="title">괴도키즈</a>
+            <nav>
+                <ul>
+                    <li><a href="index" class="active">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+                <section id="main" class="wrapper">
+                    <div class="inner">
+                        <h1 class="major">Review Uncertain</h1>
+                            <section>
+                                <div class="table-wrapper" style="width: 100%;">
+                                    <div>
+                                        <div class="col-4 col-12-small" style="display: inline-block;">
+                                            <input 
+                                                type="radio" 
+                                                id="demo-priority-low" 
+                                                name="order-by" 
+                                                checked="" 
+                                                onclick="document.getElementById('order-by-acc').style.display = 'table-row-group';      
+                                                        document.getElementById('order-by-time').style.display = 'none';">
+                                            <label for="demo-priority-low">정확도순</label>
+                                        </div>
+                                        <div class="col-4 col-12-small" style="display: inline-block;">
+                                            <input type="radio" id="demo-priority-normal" name="order-by" 
+                                                onclick="document.getElementById('order-by-acc').style.display = 'none';      
+                                                        document.getElementById('order-by-time').style.display = 'table-row-group';">
+                                            <label for="demo-priority-normal">시간순</label>
+                                        </div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>장소</th>
+                                                    <th>시간</th>
+                                                    <th>정확도</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="order-by-acc">
+                                                {% for row in acc_sorted_data %}
+                                                <tr onclick="document.getElementById('video').src = '{{ row.video_path }}';document.getElementById('pre-info').innerHTML = '<code>{{row.video_info}}</code>';document.getElementById('safe-button').href = '/safe/{{row.index}}';document.getElementById('report-button').href = '/report/{{row.index}}'">
+                                                    <td>{{ row.index }}</a></td>
+                                                    <td>{{ row.place }}</td>
+                                                    <td>{{ row.time }}</td>
+                                                    <td>{{ row.accuracy }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                            <tbody id="order-by-time" style="display: none;">
+                                                {% for row in time_sorted_data %}
+                                                <tr onclick="document.getElementById('video').src = '{{ row.video_path }}';document.getElementById('pre-info').innerHTML = '<code>{{row.video_info}}</code>';document.getElementById('safe-button').href = '/safe/{{row.index}}';document.getElementById('report-button').href = '/report/{{row.index}}'">
+                                                    <td>{{ row.index }}</a></td>
+                                                    <td>{{ row.place }}</td>
+                                                    <td>{{ row.time }}</td>
+                                                    <td>{{ row.accuracy }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3"></td>
+                                                    <td>Total: {{data_length}}</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                
+                                    <div style="display: flex;flex-direction: row;align-items:center;justify-content: center;width: 100%;">
+                                        <iframe id="video" width="600" height="500" src="{{ url_for('static', filename='assets/images/player.png')}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    </br>
+                                    </br>
+
+                                    <div class="col-4 col-12-small" style="display: inline-block; width: 700px; vertical-align: top;">
+                                        <textarea name="demo-message" id="demo-message" placeholder="Enter Expert Opinion" rows="6"></textarea>
+                                    </div>
+                                    <div class="col-4 col-12-small" style="display: inline-block; vertical-align: top;">
+                                        <pre style="width: 500px; height: 300px;" id='pre-info'>
+                                        <code><br><br>{{video_info}}<br><br></code>
+                                        </pre>
+                                    </div>
+                                    <div style="display: inline-block; margin-left: 10px;">
+                                        <ul class="actions">
+                                            <li><a href="/video" id='report-button' class="button primary">report</a></li>
+                                            <li><a href="/video" id='safe-button' class="button">s a f e</a></li>
+                                        </ul>
+                                        
+                                    </div>
+                                
+                                </div>
+                                
+                            </section>
+
+                    </div>
+                </section>
+        </div>
+
+    <!-- Footer -->
+        <footer id="footer" class="wrapper alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>©괴도키즈 </li><li>Developer: 김규민,김규원,김석기,김호준,이은서  Design: 김석기, 김호준</li>
+                </ul>
+            </div>
+        </footer>
+
+    <!-- Scripts -->
+    <script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/jquery.scrollex.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/jquery.scrolly.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/browser.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/breakpoints.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/util.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>괴도키즈</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static',filename='assets/css/noscript.css')}}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">괴도키즈</a>
+				<nav>
+					<ul>
+						<li><a href="index" class="active">Logout</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Elements</h1>
+							<!-- Form -->
+								<section>
+									<h2>Form</h2>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="name" id="demo-name" value="" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="password" name="password" id="password" value="" placeholder="Password" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="email" id="email" value="" placeholder="E-mail" />
+											</div>
+											<div class="col-12">
+												<input type="text" name="officenum" id="officenum" value="" placeholder="공무원 번호 (11자리로 입력해주세요.)" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="locate1" id="locate1">
+													<option value="">-  -</option>
+													<option value="서울특별시">서울특별시</option>
+													<option value="경기도">경기도</option>
+													<option value="강원도">강원도</option>
+													<option value="충청북도">충청북도</option>
+													<option value="충청남도">충청남도</option>
+													<option value="전라북도">전라북도</option>
+													<option value="전라남도">전라남도</option>
+													<option value="경상북도">경상북도</option>
+													<option value="경상남도">경상남도</option>
+													<option value="제주특별자치도">제주특별자치도</option>
+													<option value="인천광역시">인천광역시</option>
+													<option value="대전광역시">대전광역시</option>
+													<option value="광주광역시">광주광역시</option>
+													<option value="대구광역시">대구광역시</option>
+													<option value="울산광역시">울산광역시</option>
+													<option value="부산광역시">부산광역시</option>
+													<option value="세종특별자치시">세종특별자치시</option>
+												</select>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="locate2" id="locate2" value="" placeholder="'구'를 입력하세요" />
+											</div>
+											<div class="col-12">
+												<input type="text" name="dept" id="dept" value="" placeholder="소속 부서를 입력하세요" />
+											</div>
+											<div class="col-4 col-12-small">
+												<select name="ph_num1" id="ph_num1">
+													<option value="">- 전화번호 -</option>
+													<option value="010">010</option>
+													<option value="011">011</option>
+													<option value="019">019</option>
+												</select>
+											</div>
+											<div class="col-4 col-12-small">
+												<input type="text" name="ph_num2" id="ph_num2" value="" placeholder="" />
+											</div>
+											<div class="col-4 col-12-small">
+												<input type="text" name="ph_num3" id="ph_num3" value="" placeholder="" />
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><button type="submit">Submit</button></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy;괴도키즈 </li><li>Developer: 김규민,김규원,김석기,김호준,이은서  Design: 김석기, 김호준</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+		<script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/jquery.scrollex.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/jquery.scrolly.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/browser.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/breakpoints.min.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/util.js')}}"></script>
+		<script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+
+	</body>
+</html>
