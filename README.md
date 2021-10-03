@@ -29,7 +29,7 @@
 
 # Model
 
-
+![모델](https://user-images.githubusercontent.com/83167302/135748562-ad2b5135-2269-4726-9759-fffb253f8144.PNG)
 
 # Repository
 
