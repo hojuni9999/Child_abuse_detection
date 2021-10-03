@@ -25,7 +25,10 @@
 
 # Data
 
+![data](https://user-images.githubusercontent.com/83167302/135748203-fcb679a2-2d82-4cd3-a127-867a79819c11.png)
+
 # System Architecture
+
 
 
 # Repository
