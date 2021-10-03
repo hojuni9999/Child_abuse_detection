@@ -39,4 +39,3 @@
 └── webcam live test
 ```
 
-작성 : [김석기](https://github.com/ikgoes)
